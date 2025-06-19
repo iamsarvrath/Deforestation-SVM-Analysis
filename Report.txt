@@ -1,0 +1,95 @@
+DEFORESTATION ANALYSIS REPORT USING SUPPORT VECTOR MACHINE (SVM)
+=================================================================
+
+1. SUMMARY
+-------------------
+Analysis of global deforestation patterns using SVM regression model examining environmental and socioeconomic factors. Model 
+achieved moderate performance in predicting tree cover loss percentage (R²=0.45 after tuning). Key findings highlight 
+relationships between CO2 emissions, economic indicators, and deforestation rates.
+
+2. METHODOLOGY
+-------------
+DATA PREPROCESSING:
+- Handled duplicates
+- Winsorization for outliers (5th-95th percentiles)
+- Feature engineering:
+  * Emission per capita
+  * GDP per capita
+  * Protected to loss ratio
+- One-hot encoded country data
+- StandardScaler normalization
+
+FEATURE SELECTION:
+- SelectKBest (top 15 features)
+- PCA (95% variance retained, 12 components)
+
+MODEL DEVELOPMENT:
+- Base SVM (RBF kernel)
+- GridSearchCV hyperparameter tuning
+- 5-fold cross-validation
+
+3. MODEL PERFORMANCE
+-------------------
+    BASE MODEL:
+    - MAE: 1.4209
+    - MSE: 3.3035
+    - RMSE: 1.8176
+    - R²: 0.3086
+
+    TUNED MODEL (Best Parameters):
+    - C: 10
+    - epsilon: 0.01
+    - gamma: 'scale'
+    - kernel: 'rbf'
+
+    IMPROVEMENT:
+    - MAE: 1.3809 (+2.8%)
+    - MSE: 2.6429 (+20.0%)
+    - RMSE: 1.6257 (+10.6%)
+    - R²: 0.4469 (+44.8%)
+
+    CROSS-VALIDATION:
+    - R² scores: [0.4967, 0.4186, 0.3141, 0.2982, 0.7158]
+    - Mean CV R²: 0.4487 ± 0.1678
+
+4. KEY FINDINGS
+--------------
+The analysis revealed that higher GDP per capita correlates with reduced deforestation, while increased CO2 emissions show a strong link to forest loss. Brazil recorded the highest absolute forest loss, whereas Indonesia had the greatest percentage loss. Countries with stricter deforestation policies demonstrated better preservation outcomes. Protected areas proved effective when coverage exceeded minimum thresholds, and international aid showed variable impacts depending on local governance. These results highlight the complex interplay of economic, environmental, and policy factors in deforestation patterns.
+    ECONOMIC FACTORS:
+    - Higher GDP per capita → Reduced deforestation
+    - International aid effectiveness varies by policy
+
+    ENVIRONMENTAL INDICATORS:
+    - Strong CO2 emissions per capita correlation
+    - Protected areas effective above threshold coverage
+
+    COUNTRY TRENDS:
+    - Highest absolute loss: Brazil
+    - Highest % loss: Indonesia
+    - Stricter policies → Better preservation
+
+5. RECOMMENDATIONS
+-----------------
+1. Data & Modeling
+    - Add temporal/satellite data
+    - Test ensemble models
+    - Expand regional datasets
+
+2. Conservation Policy
+    - Strengthen protected area enforcement
+    - Link aid to measurable outcomes
+    - Standardize monitoring methods
+
+3. Governance
+    - Implement transparency systems
+    - Develop anti-corruption protocols
+    - Build community monitoring
+
+Implementation:
+    - Short-term (0-6mo): Pilot projects
+    - Medium-term (6-18mo): Model refinements
+    - Long-term (18-36mo): Full deployment
+
+6. CONCLUSION
+------------
+This deforestation analysis using SVM regression achieved moderate predictive accuracy (R² 0.45 after tuning), identifying key relationships between economic indicators, CO2 emissions, and forest loss trends across countries. While Brazil showed the highest absolute deforestation and Indonesia the greatest percentage loss, the model demonstrated that protected areas and stricter policies significantly reduce forest loss when properly enforced. The visualizations and performance metrics (MAE 1.38, MSE 2.64) highlight both the model's capabilities and opportunities for enhancement through expanded data inputs and advanced modeling techniques. These findings underscore the complex interplay of socioeconomic and environmental factors in deforestation patterns, providing actionable insights for targeted conservation strategies.
