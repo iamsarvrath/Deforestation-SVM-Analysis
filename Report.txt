@@ -3,9 +3,12 @@ DEFORESTATION ANALYSIS REPORT USING SUPPORT VECTOR MACHINE (SVM)
 
 1. SUMMARY
 -------------------
-Analysis of global deforestation patterns using SVM regression model examining environmental and socioeconomic factors. Model 
-achieved moderate performance in predicting tree cover loss percentage (R²=0.45 after tuning). Key findings highlight 
-relationships between CO2 emissions, economic indicators, and deforestation rates.
+This deforestation analysis using SVM regression achieved moderate predictive accuracy (R² 0.45 after tuning), identifying key relationships between economic 
+indicators, CO2 emissions, and forest loss trends across countries. While Brazil showed the highest absolute deforestation and Indonesia the greatest percentage 
+loss, the model demonstrated that protected areas and stricter policies significantly reduce forest loss when properly enforced. The visualizations and performance
+metrics (MAE 1.38, MSE 2.64) highlight both the model's capabilities and opportunities for enhancement through expanded data inputs and advanced modeling
+techniques. These findings underscore the complex interplay of socioeconomic and environmental factors in deforestation patterns, providing actionable insights 
+for targeted conservation strategies.
 
 2. METHODOLOGY
 -------------
@@ -92,12 +95,3 @@ Implementation:
     - Short-term (0-6mo): Pilot projects
     - Medium-term (6-18mo): Model refinements
     - Long-term (18-36mo): Full deployment
-
-6. CONCLUSION
-------------
-This deforestation analysis using SVM regression achieved moderate predictive accuracy (R² 0.45 after tuning), identifying key relationships between economic 
-indicators, CO2 emissions, and forest loss trends across countries. While Brazil showed the highest absolute deforestation and Indonesia the greatest percentage 
-loss, the model demonstrated that protected areas and stricter policies significantly reduce forest loss when properly enforced. The visualizations and performance
-metrics (MAE 1.38, MSE 2.64) highlight both the model's capabilities and opportunities for enhancement through expanded data inputs and advanced modeling
-techniques. These findings underscore the complex interplay of socioeconomic and environmental factors in deforestation patterns, providing actionable insights 
-for targeted conservation strategies.
